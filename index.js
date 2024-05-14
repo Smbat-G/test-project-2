@@ -168,42 +168,63 @@
 // Home Work 1 ??? chi ashxatum
 
 
-// const container = document.getElementsByClassName("container")
+// const container = document.getElementsByClassName("container")[0]
 // fetch("https://jsonplaceholder.typicode.com/photos")
 // .then((response)=> response.json())
 // .then(function(json){
+//     console.log(json);
 // for(let i = 0; i < json.length; i++){
 //     let jsonItem = document.createElement("div");
 //     console.log(jsonItem);
-//     jsonItem.innerHTML =   `<p>${i}</p>`
+//     jsonItem.innerHTML =   `<img src=${json[i].url} alt="">`
 
 //     container.appendChild(jsonItem)
 // }
 // })
+// .catch((error) => {
+//     console.log("Error fetching data:");
+// });
 
 // Home work 2/1 poqric-mec
 
-function bubbleSort(arr) {
-  let n = arr.length;
+// function bubbleSort(arr) {
+//   let n = arr.length;
 
-  for (let i = 0; i < n; i++) {
-    for (let j = 0; j < n - i - 1; j++) {           // ?
-      if (arr[j] > arr[j + 1]) {
-        let temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
-      }
-    }
+//   for (let i = 0; i < n; i++) {
+//     for (let j = 0; j < n - i - 1; j++) {           // ?
+//       if (arr[j] > arr[j + 1]) {
+//         let temp = arr[j];
+//         arr[j] = arr[j + 1];
+//         arr[j + 1] = temp;
+//       }
+//     }
+//   }
+//   return arr;
+// }
+
+// let numbers = [64, 34, 25, 12, 22, 11, 90];
+// let sortedNumbers = bubbleSort(numbers);
+// console.log(sortedNumbers);
+
+
+// 14.05.24
+
+const container = document.getElementsByClassName("container")[0]
+fetch("https://jsonplaceholder.typicode.com/todos?_limit=10")
+.then((response)=> response.json())
+.then(function(json){
+    console.log(json);
+for(let i = 0; i < json.length; i++){
+  let jsonItem = document.createElement("div");
+  if(json[i].completed = true){
+    jsonItem.style = 'red'
   }
-  return arr;
+    console.log(jsonItem);
+    jsonItem.innerHTML =   `<p ${json[i]}></p>`
+
+    container.appendChild(jsonItem)
 }
-
-let numbers = [64, 34, 25, 12, 22, 11, 90];
-let sortedNumbers = bubbleSort(numbers);
-console.log(sortedNumbers);
-
-
-
-// Home work 2/2 mecic-poqr
-
-
+})
+.catch((error) => {
+    console.log("Error fetching data:");
+});
