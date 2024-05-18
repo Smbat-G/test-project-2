@@ -167,7 +167,6 @@
 
 // Home Work 1 ??? chi ashxatum
 
-
 // const container = document.getElementsByClassName("container")[0]
 // fetch("https://jsonplaceholder.typicode.com/photos")
 // .then((response)=> response.json())
@@ -206,25 +205,198 @@
 // let sortedNumbers = bubbleSort(numbers);
 // console.log(sortedNumbers);
 
-
 // 14.05.24
 
-const container = document.getElementsByClassName("container")[0]
-fetch("https://jsonplaceholder.typicode.com/todos?_limit=10")
-.then((response)=> response.json())
-.then(function(json){
-    console.log(json);
-for(let i = 0; i < json.length; i++){
-  let jsonItem = document.createElement("div");
-  if(json[i].completed = true){
-    jsonItem.style = 'red'
-  }
-    console.log(jsonItem);
-    jsonItem.innerHTML =   `<p ${json[i]}></p>`
+// const container = document.getElementsByClassName("container")[0]
+// fetch("https://jsonplaceholder.typicode.com/todos?_limit=10")
+// .then((response)=> response.json())
+// .then(function(json){
+//     console.log(json);
+// for(let i = 0; i < json.length; i++){
+//   let jsonItem = document.createElement("div");
+//   if(json[i].completed === true){
+//     jsonItem.style.color = 'red'
+//   }
+//     console.log(jsonItem);
+//     jsonItem.innerHTML =   `<p>${json[i].title}</p>`
 
-    container.appendChild(jsonItem)
-}
-})
-.catch((error) => {
-    console.log("Error fetching data:");
-});
+//     container.appendChild(jsonItem)
+// }
+// })
+// .catch((error) => {
+//     console.log("Error fetching data:");
+// });
+
+//=======================================================================================================================
+
+// let users = [
+//   { id: 1, firstName: "Khachik", lastName: "Gevorgyan" },
+//   { id: 2, firstName: "Gohar", lastName: "Mkhitaryan" },
+//   { id: 3, firstName: "Smbat", lastName: "Grigoryan" },
+//   { id: 4, firstName: "Hayk", lastName: "Grigoryan" },
+// ];
+
+// let profiles = [
+//   { userId: 1, email: "khach@gmail.com" },
+//   { userId: 2, email: "gohar@gmail.com" },
+//   { userId: 3, email: "smbat@gmail.com" },
+//   { userId: 4, email: "hayk@gmail.com" },
+// ];
+
+// function getUser(id) {
+//   let x = users.find((x) => x.id === id);
+//   let y = profiles.find((x) => x.userId === id);
+
+//   if (x && y) {
+//     return {
+//       ...x,
+//       ...y,
+//     };
+//   }
+// }
+
+// let user = getUser(1);
+// console.log(user);
+
+// function sum(a, b) {
+//   if (b) {
+//     return a + b;
+//   } else {
+//     return function (c) {
+//       return a + c;
+//     };
+//   }
+// }
+
+// console.log(sum(3, 4));
+// // console.log(sum(3)(4));
+
+// let x = sum(5)
+// console.log(x(7));
+
+// function counter() {
+//   let sum = 0;
+//   return {
+//     increment: function () {
+
+//         return sum++;
+
+//     },
+//     decrement: function () {
+
+//         return sum--;
+
+//     },
+//     result: function () {
+//        console.log(sum);;
+//     },
+//   };
+// }
+
+// let x = counter();
+
+// x.increment();
+// x.decrement();
+// x.decrement();
+// x.decrement();
+// x.result();
+
+// x.decrement();
+// x.decrement();
+// x.decrement();
+
+// x.result();
+
+// function foo(a) {
+//   return function (b) {
+//     console.log( a + " " + b);
+//   };
+// }
+
+// foo("Smbat")("Grigoryan"); // Smbat Grigoryan
+
+// foo(2,5)(7)
+
+// function foo(a, b) {
+//   return function (c) {
+//     console.log(a + b + c);
+//   };
+// }
+
+// let x = foo(2, 5)
+// x(7)
+
+// HomeWork 16.05.24
+
+// 1
+
+
+
+// function is_array(input) {
+//   return Object.prototype.toString.call(input) === '[object Array]';
+// }
+
+// console.log(is_array('w3resource'));
+// console.log(is_array([1, 2, 4, 0]));
+
+// 2
+
+// function union(a, b){
+//     let result = []
+//    for(let i = 0; i < a.length; i++){
+//    if(!result.includes(a[i])){
+//     result.push(a[i])
+//    }
+// for(let j = 0; j < b.length; j++){
+//     if(!result.includes(b[j])){
+//         result.push(b[j])
+//     }
+// }
+//    }
+
+//    result.sort(function(a,b){
+//     return a - b
+//    })
+//    return result
+// }
+// let a = [1,2,3]
+// let b = [100,2,1,10]
+// console.log(union([1, 2, 3], [100, 2, 1, 10]));
+
+// 3
+// function union(a, b) {
+//   let result = [];
+// let result2 = []
+// let result3 = []
+//   for (let i = 0; i < b.length; i++) {
+//     result2.push(b[i]);
+//   }
+//   for (let j = 0; j < a.length; j++) {
+//     if (!result.includes(a[j])) {
+//       result3.push(a[j]);
+//     }
+//   }
+//   if(result2!==result3){
+//     result.push
+//   }
+// }
+// let a = [1, 2, 3];
+// let b = [100, 2, 1, 10];
+// console.log(difference([1, 2, 3], [100, 2, 1, 10]));
+// // result: [3, 10, 100]
+
+
+// function difference(a, b) {
+//   const x = a.filter(function(item) { 
+//     return !b.includes(item)
+//   });
+//   const y = b.filter(function(item) { 
+//     return !a.includes(item)
+//   });
+//   const result = [...x, ...y];
+//   return result;
+// }
+
+// let a = [1, 2, 3];
+// let b = [100, 2, 1, 10];
+// console.log(difference(a, b)); // Output: [3, 10, 100]
